@@ -46,7 +46,20 @@ public struct RGBColour: Equatable {
         }
         return Color(cgColor)
     }
-    
+}
+
+extension RGBColour {
+    public init?(fromHex hex: String) throws {
+        guard let colourString = extractColourComponents(from: hex) else {
+            return nil
+        }
+        let hexBytes = try hexStringToBytes(colourString)
+        let r = Double(hexBytes[0]) / 255
+        let g = Double(hexBytes[1]) / 255
+        let b = Double(hexBytes[2]) / 255
+        let a = Double(hexBytes[3]) / 255
+        self.init(red: r, green: g, blue: b, alpha: a)
+    }
 }
 
 
