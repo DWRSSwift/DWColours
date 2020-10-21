@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "DWColours",
     platforms: [
-        .macOS(.v10_14), .iOS(.v14), .watchOS(.v3), .tvOS(.v10)
+        .macOS(.v10_14), .iOS(.v14), .watchOS(.v4), .tvOS(.v10)
     ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
