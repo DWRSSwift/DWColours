@@ -4,7 +4,7 @@ import XCTest
 #if !canImport(ObjectiveC)
 public func allTests() -> [XCTestCaseEntry] {
     return [
-        testCase(WDColoursTests.allTests),
+        testCase(DWColoursTests.allTests),
     ]
 }
 #endif

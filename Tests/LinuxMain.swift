@@ -1,8 +1,8 @@
 import XCTest
 
 
-import WDColoursTests
+import DWColoursTests
 
 var tests = [XCTestCaseEntry]()
-tests += WDColoursTests.allTests()
+tests += DWColoursTests.allTests()
 XCTMain(tests)
