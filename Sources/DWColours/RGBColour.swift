@@ -46,6 +46,23 @@ public struct RGBColour: Equatable {
         }
         return Color(cgColor)
     }
+    
+    public func getBrightness() -> Double {
+        #if canImport(UIKit)
+        typealias ColourType = UIColor
+        #elseif canImport(AppKit)
+        typealias ColourType = NSColor
+        #endif
+        let c: ColourType
+        if #available(watchOS 7, *) {
+            c = ColourType(self.color!)
+        } else {
+            c = ColourType(cgColor: self.cgColor!)
+        }
+        var brightness: CGFloat = CGFloat()
+        c.getHue(nil, saturation: nil, brightness: &brightness, alpha: nil)
+        return Double(brightness)
+    }
 }
 
 extension RGBColour {
